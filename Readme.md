@@ -56,3 +56,14 @@ $$\phi_m = atan2\left(\sin\phi_1 + \sin\phi_2,\ \sqrt{(\cos\phi_1 + B_x)^2 + B_y
 $$\lambda_m = \lambda_1 + atan2(B_y,\ \cos(\phi_1) + B_x )$$
 
 Al igual que el Bearing inicial puede variar del Bearing final, el punto medio puede no estar situado a mitad de camino entre latitudes/longitudes.
+
+## Punto de destino dada la distancia y Bearing desde el punto inicial
+
+Dado un punto de partida, un rumbo inicial y una distancia, se calculará el punto de destino y el rumbo final viajando a lo largo de un arco de círculo máximo (distancia más corta).
+
+
+Fórmula
+$$ \phi_2 = asin(\sin\phi_1\cdot \cos\delta + \cos\phi_1\cdot\sin\delta\cdot\cos\theta)$$
+$$\lambda_2 = \lambda_1 + atan2(\sin\theta\cdot\sin\delta\cdot\cos\phi_1, \cos\delta - sin\phi_1\cdot\sin\phi_2 )$$
+
+donde $\phi$ es latitud, $\lambda$ es longitud, $\theta$ es el Bearing (en sentido del reloj desde el norte) y  $\delta$ es la distancia angular $d/R$.
