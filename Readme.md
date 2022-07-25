@@ -68,3 +68,45 @@ $$\phi_2 = asin(\sin\phi_1\cdot \cos\delta + \cos\phi_1\cdot\sin\delta\cdot\cos\
 $$\lambda_2 = \lambda_1 + atan2(\sin\theta\cdot\sin\delta\cdot\cos\phi_1, \cos\delta - sin\phi_1\cdot\sin\phi_2 )$$
 
 donde $\phi$ es latitud, $\lambda$ es longitud, $\theta$ es el Bearing (en sentido del reloj desde el norte) y  $\delta$ es la distancia angular $d/R$.
+
+ ## **Intersección de dos trayectorias dados los puntos de partida y Bearings**
+
+Fórmula:
+
+$$\delta_{12} = 2\cdot asin(\sqrt{(\sin^2(\Delta\phi/2) + \cos\phi_1\cdot\cos\phi_2\cdot\sin^2(\Delta\lambda/2))})$$ 
+
+$$\theta_a = acos((\sin\phi_2 - \sin\phi_1\cdot\cos\delta_{12}) / (\sin\delta_{12}\cdot\cos\phi_1))$$
+
+$$\theta_b = acos((\sin\phi_1 - \sin\phi_2\cdot\cos\delta_{12}) / (\sin\delta_{12}\cdot\cos\phi_2))$$
+
+$$\theta_{12} = \left\{
+	       \begin{array}{ll}
+		 \theta_a      & \mathrm{si\ } \sin(\lambda_2 - \lambda_1)  > 0 \\
+		 2\pi - \theta_a & \mathrm{si\ } \sin(\lambda_2 - \lambda_1)  \le 0 \\
+	       \end{array}
+	     \right.$$
+
+$$\theta_{21} = \left\{
+	       \begin{array}{ll}
+		 2\pi - \theta_b      & \mathrm{si\ } \sin(\lambda_2 - \lambda_1)  > 0 \\
+		 \theta_b & \mathrm{si\ } \sin(\lambda_2 - \lambda_1)  \le 0 \\
+	       \end{array}
+	     \right.$$
+
+$$\alpha_1 = \theta_{12} - \theta_{12}$$
+$$\alpha_2 = \theta_{21} - \theta_{23}$$
+
+$$\alpha_3 = acos(-\cos\alpha_1\cdot\cos\alpha_2 + \sin\alpha_1\cdot\sin\alpha_2\cdot\cos\delta_{12})$$
+
+$$\delta_{13} = atan2(\sin\delta_{12}\cdot\sin\alpha_1\cdot\sin\alpha_2, \cos\alpha_2 + \cos\alpha_1\cdot\cos\alpha_3)$$
+
+$$\phi_{3} = asin(\sin\phi_{1}\cdot\cos\delta_{13} + \cos\phi_1\cdot\sin\delta_{13}\cos\theta_{13})$$
+
+$$\Delta\lambda_{13} = atan2(\sin\theta_{13}\cdot\sin\delta_{13}\cdot\cos\phi_1, \cos\delta_{13} - \sin\phi_1\cdot\sin\phi_3)$$
+
+$$\lambda_3 = \lambda_1 + \Delta\lambda_{13}$$
+
+donde  
+$\phi_1$, $\lambda_1$, $theta_{13}$ son la latitud, longitud y bearing inicial del primer punto hacia el punto de intersección.
+$\phi_2$, $\lambda_2$, $theta_{23}$ son la latitud, longitud y bearing inicial del segundo punto hacia el punto de intersección.
+$\phi_3$, $\lambda_3$ es el punto de intersección.
