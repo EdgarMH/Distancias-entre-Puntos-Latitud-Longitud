@@ -42,7 +42,7 @@ $$ \theta = atan2(\sin\Delta\lambda\cdot\cos\phi_2,\ \cos\phi_1 \cdot \sin\phi_2
 
 donde $\phi_1$, $\lambda_1$ es el punto inicial, $\phi_2$, $\lambda_2$ es el punto final y $\Delta\lambda$ es la diferencia de longitud.
 
-Para el Bearing final, basta con tomar el Bearing inicial desde el punto final hasta el punto inicial e invertirlo (utilizando $\theta = (\theta+180)$).
+Para el Bearing final, basta con tomar el Bearing inicial desde el punto final hasta el punto inicial e invertirlo (utilizando $\theta = (\theta+180)$ ).
 
 
 ## Punto medio
@@ -63,7 +63,8 @@ Dado un punto de partida, un rumbo inicial y una distancia, se calculará el pun
 
 
 Fórmula
-$$ \phi_2 = asin(\sin\phi_1\cdot \cos\delta + \cos\phi_1\cdot\sin\delta\cdot\cos\theta)$$
+
+$$\phi_2 = asin(\sin\phi_1\cdot \cos\delta + \cos\phi_1\cdot\sin\delta\cdot\cos\theta)$$
 $$\lambda_2 = \lambda_1 + atan2(\sin\theta\cdot\sin\delta\cdot\cos\phi_1, \cos\delta - sin\phi_1\cdot\sin\phi_2 )$$
 
 donde $\phi$ es latitud, $\lambda$ es longitud, $\theta$ es el Bearing (en sentido del reloj desde el norte) y  $\delta$ es la distancia angular $d/R$.
