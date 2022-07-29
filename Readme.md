@@ -8,7 +8,7 @@ El código está escrito en Octave.
 
 
 
-## Great-circle distance between two points
+## **Great-circle distance (Distancia ortodrómica entre dos puntos)**
 para el cáculo de Great-circle distance between two points (Distancia ortodrómica entre dos puntos) se deben introducir las coordenadas de los dos puntos.
 Se acepta el formato de grados decimales con signo sin dirección de la brújula, donde el negativo indica el oeste/sur (por ejemplo, 40,7486, -73,9864):
 
@@ -22,15 +22,15 @@ Aquí utilizaremos la fórmula del "Semiverseno" para calcular la distancia orto
 Fórmula del Haversino:
 $$a = \sin^{2}(\Delta \phi/2) + \cos \phi_{1}\cdot \cos\phi_{2}\cdot\sin^2(\Delta\lambda/2)$$
 $$c = 2\cdot atan 2 (\sqrt{a},\sqrt{1-a})$$
-$$ d = R\cdot c$$
+$$d = R\cdot c$$
 
-donde $ \phi $ es latitud, $\lambda$ es longitus, $R$ es el radio de la tierra ($radio medio = 6.371 Km$), $c$ es la distancia angular en radianes y $a$ es el cuadrado de la mitad de la longitud de la cuerda entre los puntos.
+donde $\phi$ es latitud, $\lambda$ es longitus, $R$ es el radio de la tierra ($radio medio = 6.371 Km$), $c$ es la distancia angular en radianes y $a$ es el cuadrado de la mitad de la longitud de la cuerda entre los puntos.
 
 La fórmula del haversino "sigue siendo válida para el cálculo numérico incluso a pequeñas distancias".
 
 
 
-## Bearing
+## **Bearing**
 
 Un angulo Bearing es un ángulo, medido en el sentido de las agujas del reloj desde la dirección norte.
 
@@ -45,7 +45,7 @@ donde $\phi_1$, $\lambda_1$ es el punto inicial, $\phi_2$, $\lambda_2$ es el pun
 Para el Bearing final, basta con tomar el Bearing inicial desde el punto final hasta el punto inicial e invertirlo (utilizando $\theta = (\theta+180)$ ).
 
 
-## Punto medio
+## **Punto medio**
 
 Es el punto medio de una trayectoria de círculo máximo entre dos puntos.
 
@@ -57,7 +57,7 @@ $$\lambda_m = \lambda_1 + atan2(B_y,\ \cos(\phi_1) + B_x )$$
 
 Al igual que el Bearing inicial puede variar del Bearing final, el punto medio puede no estar situado a mitad de camino entre latitudes/longitudes.
 
-## Punto de destino dada la distancia y Bearing desde el punto inicial
+## **Punto de destino dada la distancia y Bearing desde el punto inicial**
 
 Dado un punto de partida, un rumbo inicial y una distancia, se calculará el punto de destino y el rumbo final viajando a lo largo de un arco de círculo máximo (distancia más corta).
 
