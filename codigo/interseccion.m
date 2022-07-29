@@ -48,10 +48,10 @@ if (sin(lambda2 - lambda1) > 0)
     bearing_1_2 = bearing_i_12;
     bearing_2_1 = (2*pi) - bearing_f_12;
 
-else:
-    bearing_1_2 = (2 * pi) - bearing_i_12
+else
+    bearing_1_2 = (2*pi) - bearing_i_12;
     bearing_2_1 = bearing_f_12;
-endif;
+endif
 
 # Angulos entre puntos
 ang_1 = bearing_1_3 - bearing_1_2;   # angulo p2-p1-p3
@@ -63,7 +63,7 @@ ang_dist_1_3 = atan2(sin(ang_dist_1_2) * sin(ang_1) * sin(ang_2), cos(ang_2) + c
 
 # Latitud del punto 3
 phi3 = asin(sin(phi1) * cos(ang_dist_1_3) + cos(phi1) * sin(ang_dist_1_3) * cos(bearing_1_3));
-Lat3 = phi3*180/pi;
+lat3 = phi3*180/pi;
 
 # Longitud del punto 3
 delta_long_1_3 = atan2(sin(bearing_1_3) * sin(ang_dist_1_3) * cos(phi1), cos(ang_dist_1_3) - sin(phi1) * sin(phi3));
@@ -71,4 +71,4 @@ lambda3 = lambda1 + delta_long_1_3;
 lon3 = lambda3*180/pi;
 
 # Mostramos los resultados
-sprintf('\n\nEl punto de intersección es el punto con latitud %.2f y longitug %.2f \n', lat3, lon3);
+sprintf('\n\nEl punto de intersección es el punto con latitud %.2f y longitug %.2f \n', lat3, lon3)
