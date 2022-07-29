@@ -29,7 +29,7 @@ lambda2 = lon2*pi/180;
 bearing_2_3 = brng2*pi/180;
 R = 6371000; #metros
 Dphi = phi2 - phi1;
-Dlambda = lon2 - lon1;
+Dlambda = lambda2 - lambda1;
 
 # Procedimiento
 
