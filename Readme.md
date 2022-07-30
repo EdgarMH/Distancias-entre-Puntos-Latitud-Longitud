@@ -9,7 +9,7 @@ El código está escrito en Octave.
 
 
 ## **Great-circle distance (Distancia ortodrómica entre dos puntos)**
-para el cáculo de Great-circle distance between two points (Distancia ortodrómica entre dos puntos) se deben introducir las coordenadas de los dos puntos.
+Para el cáculo de Great-circle distance between two points (Distancia ortodrómica entre dos puntos) se deben introducir las coordenadas de los dos puntos.
 Se acepta el formato de grados decimales con signo sin dirección de la brújula, donde el negativo indica el oeste/sur (por ejemplo, 40,7486, -73,9864):
 
 ### Distancia
